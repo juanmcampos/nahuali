@@ -36,6 +36,7 @@ module Nahuali {
                         console.log("ok");
                         this.directionVelocity *= -1;
                         this.flipFlop = true;
+                        game.add.tween(this).to( { angle: 45 }, 2000, Phaser.Easing.Linear.None, true);
                     }
                 }
             

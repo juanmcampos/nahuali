@@ -8,6 +8,10 @@ module Nahuali{
         
         
         
+        create(){
+            this.addTilesetImage('tiles');
+        }
+        
     }
     
 }

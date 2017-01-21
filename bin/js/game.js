@@ -120,6 +120,7 @@ var Nahuali;
                     console.log("ok");
                     this.directionVelocity *= -1;
                     this.flipFlop = true;
+                    game.add.tween(this).to({ angle: 45 }, 2000, Phaser.Easing.Linear.None, true);
                 }
             }
             if (this.changeDirection.isUp) {
@@ -157,6 +158,8 @@ var Nahuali;
             this.load.spritesheet('simon', 'assets/simon.png', 58, 96, 5);
             this.load.image('level1', 'assets/level1.png');
             this.load.image('player', 'assets/player.png');
+            this.game.load.tilemap('map', 'assets/tileMaps/tile/tile_property.json');
+            this.game.load.image('tiles', 'assets/tileMaps/map/gridtiles.png');
         };
         Preloader.prototype.create = function () {
             var tween = this.add.tween(this.preloadBar).to({ alpha: 0 }, 1000, Phaser.Easing.Linear.None, true);
