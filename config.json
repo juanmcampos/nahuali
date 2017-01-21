@@ -1,0 +1,14 @@
+{
+  "watch": true,
+  "rootPath": "gamejam2017/",
+  "outputPath": "gamejam2017bin/js",
+  "compilerOptions": {
+    "comments"    : true, 
+    "debug"     : false, 
+    "declaration" : false, 
+    "minw"      : false, 
+    "moduleType"  : "AMD", 
+    "sourcemap"   : false, 
+    "target"    : "ES3" 
+  }
+}
