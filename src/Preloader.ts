@@ -16,6 +16,7 @@ module Nahuali {
             this.load.audio('music', 'assets/title.mp3', true);
             this.load.spritesheet('simon', 'assets/simon.png', 58, 96, 5);
             this.load.image('level1', 'assets/level1.png');
+            this.load.image('player','assets/player.png');
 
         }
 
