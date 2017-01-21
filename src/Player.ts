@@ -7,6 +7,7 @@ module Nahuali {
         changeDirection: Phaser.Key;
         test: number;
         limit: number;
+        shipTrail: any;
         
         constructor(game: Phaser.Game, x: number, y: number) {
 
@@ -19,12 +20,25 @@ module Nahuali {
             game.physics.enable(this,Phaser.Physics.ARCADE);
             this.body.collideWorldBounds = true;
             this.anchor.setTo(0.5,0.5);
+            
 
             game.add.existing(this);
             
             this.changeDirection = this.game.input.keyboard.addKey(Phaser.Keyboard.S);
             
+            this.shipTrail = game.add.emitter(this.x - 10,this.y,1000);
+            this.shipTrail.width = 10;
             
+            
+            //this.shipTrail.height = 10;
+            this.shipTrail.makeParticles('bullet');
+            this.shipTrail.setXSpeed(20,-20);
+            this.shipTrail.setYSpeed(170,150);
+            this.shipTrail.setRotation(50,-50);
+            this.shipTrail.setAlpha(1,0.01,800);
+            this.shipTrail.setScale(4,5,4,5,2000,Phaser.Easing.Quintic.Out);
+            this.shipTrail.start(false,5000,10);
+
 
         }
         
@@ -55,6 +69,9 @@ module Nahuali {
                 if(this.body.position.x < 300){
                     this.body.velocity.x = 50;
                 }
+
+                 this.shipTrail.x = this.x;
+                 this.shipTrail.y = this.y;
             
            /* this.game.time.events.repeat(25, 80, function() {
                 this.body.velocity.y = Math.sin(this.game.time.now) * 25;

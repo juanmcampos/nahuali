@@ -20,6 +20,7 @@ module Nahuali {
             
             this.game.load.tilemap('map', 'assets/tileMaps/tile/tile_property.json');
             this.game.load.image('tiles', 'assets/tileMaps/map/gridtiles.png');
+            this.game.load.image('bullet', 'assets/bullet.png');
         }
 
         create() {

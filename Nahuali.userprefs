@@ -1,0 +1,14 @@
+﻿<Properties StartupConfiguration="{E16D943C-6E2C-487C-9BBD-A7BC7E7B6393}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="web.config">
+    <Files>
+      <File FileName="web.config" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Nahuali PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

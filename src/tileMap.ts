@@ -1,16 +1,11 @@
 module Nahuali{
     
-    export class tileMap extends Phaser.tileMap{
+    export class Map extends Phaser.Tilemap{
         
         constructor(game: Phaser.Game, key: string, tileWidth: number, tileHeight: number, width: number, height: number){
-            super(game, tileWidth, tileHeight, width, height);
+            super(game, key, tileWidth, tileHeight, width, height);
         }
         
-        
-        
-        create(){
-            this.addTilesetImage('tiles');
-        }
         
     }
     
