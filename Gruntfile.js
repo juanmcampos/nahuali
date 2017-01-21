@@ -4,7 +4,8 @@ module.exports = function(grunt) {
       default : {
         src: ["**/*.ts", "**/*.d.ts", "!emit/**", "!node_modules/**"],
         watch: ["."],
-        outDir: 'bin/js/',
+        out: "bin/js/game.js",
+        //outDir: 'bin/js/',
         options: {
             allowJs: true
         }

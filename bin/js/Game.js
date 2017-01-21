@@ -1,73 +1,26 @@
-var Game = (function () {
-    function Game() {
-        this.game = new Phaser.Game(800, 600, Phaser.AUTO, 'content', this);
-    }
-    Game.prototype.preload = function () {
-        this.game.load.image('sky', 'assets/sky.png');
-        this.game.load.image('ground', 'assets/platform.png');
-        this.game.load.image('star', 'assets/star.png');
-        this.game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
-    };
-    Game.prototype.create = function () {
-        this.game.add.sprite(0, 0, 'star');
-        this.game.physics.startSystem(Phaser.Physics.ARCADE);
-        this.game.add.sprite(0, 0, 'sky');
-        this.platforms = this.game.add.group();
-        this.platforms.enableBody = true;
-        var ground = this.platforms.create(0, this.game.world.height - 64, 'ground');
-        ground.scale.setTo(2, 2);
-        ground.body.immovable = true;
-        var ledge = this.platforms.create(400, 400, 'ground');
-        ledge.body.immovable = true;
-        ledge = this.platforms.create(-150, 250, 'ground');
-        ledge.body.immovable = true;
-        this.player = this.game.add.sprite(32, this.game.world.height - 150, 'dude');
-        this.game.physics.arcade.enable(this.player);
-        this.player.body.bounce.y = 0.2;
-        this.player.body.gravity.y = 300;
-        this.player.body.collideWorldBounds = true;
-        this.player.animations.add('left', [0, 1, 2, 3], 10, true);
-        this.player.animations.add('right', [5, 6, 7, 8], 10, true);
-        this.stars = this.game.add.group();
-        this.stars.enableBody = true;
-        for (var i = 0; i < 12; i++) {
-            var star = this.stars.create(i * 70, 0, 'star');
-            star.body.gravity.y = 6;
-            star.body.bounce.y = 0.7 + Math.random() * 0.2;
-        }
-        this.score = 0;
-        this.scoreText = this.game.add.text(16, 16, 'Score: 0', { fontSize: '32px', fill: '#000' });
-    };
-    Game.prototype.update = function () {
-        this.game.physics.arcade.collide(this.player, this.platforms);
-        this.game.physics.arcade.collide(this.stars, this.platforms);
-        this.game.physics.arcade.overlap(this.player, this.stars, this.collectStar, null, this);
-        this.player.body.velocity.x = 0;
-        var cursors = this.game.input.keyboard.createCursorKeys();
-        if (cursors.left.isDown) {
-            this.player.body.velocity.x = -150;
-            this.player.animations.play('left');
-        }
-        else if (cursors.right.isDown) {
-            this.player.body.velocity.x = 150;
-            this.player.animations.play('right');
-        }
-        else {
-            this.player.animations.stop;
-            this.player.frame = 4;
-        }
-        if (cursors.up.isDown && this.player.body.touching.down) {
-            this.player.body.velocity.y = -350;
-        }
-    };
-    Game.prototype.collectStar = function (player, star) {
-        star.kill();
-        this.score += 10;
-        this.scoreText.text = 'Score: ' + this.score;
-    };
-    return Game;
-}());
-window.onload = function () {
-    var game = new Game();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
+window.onload = function () {
+    var game = new Nahuali.Game();
+};
+var Nahuali;
+(function (Nahuali) {
+    var Game = (function (_super) {
+        __extends(Game, _super);
+        function Game() {
+            var _this = _super.call(this, 800, 600, Phaser.AUTO, 'content', null) || this;
+            _this.state.add('Boot', Nahuali.Boot, false);
+            _this.state.add('Preloader', Nahuali.Preloader, false);
+            _this.state.add('MainMenu', Nahuali.MainMenu, false);
+            console.log(_this);
+            _this.state.start('Preloader');
+            return _this;
+        }
+        return Game;
+    }(Phaser.Game));
+    Nahuali.Game = Game;
+})(Nahuali || (Nahuali = {}));
 //# sourceMappingURL=Game.js.map
