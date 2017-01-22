@@ -11,7 +11,9 @@
     "grunt-ts": "^6.0.0-beta.11",
     "typescript": "^2.1.5"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt-contrib-copy": "^1.0.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
