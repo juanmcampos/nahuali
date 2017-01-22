@@ -10,6 +10,8 @@ module Nahuali {
         layer1: Phaser.TilemapLayer;
         enemiesGroup: Phaser.Group;
 
+         timer:any = 0;
+
         create() {
             
             //this.game.world.setBounds(0, 0, 800, 600);
@@ -29,12 +31,7 @@ module Nahuali {
             
             this.enemiesGroup = this.game.add.group();
             
-            for (var x = 0; x < 10; x++){
-                var num1 = Math.floor(Math.random() * 500) + 5;
-                var num2 = Math.floor(Math.random() * 100) + 10;
-                this.enemySkull = new EnemieSkull(this.game,num1,num2);
-                this.enemiesGroup.add(this.enemySkull);
-            }
+
 
            /* this.logo = this.add.sprite(this.world.centerX, -300, 'logo');
             this.logo.anchor.setTo(0.5, 0.5);
@@ -43,13 +40,26 @@ module Nahuali {
             this.add.tween(this.logo).to({ y: 220 }, 2000, Phaser.Easing.Elastic.Out, true, 2000);
 
             this.input.onDown.addOnce(this.fadeOut, this);*/
-            
+            this.layer1.fixedToCamera = false;
             this.startGame();
 
         }
         
         update(){
-             this.layer1.position.y += 2;
+             this.layer1.position.x -=8;
+             //for (var x = 0; x < 10; x++){
+
+            this.timer += this.game.time.elapsed; //this is in ms, not seconds. 
+           let timeok = Math.floor(Math.random() * 1200 ) + 900;
+            if (this.timer >= timeok) {
+                this.timer -= timeok;
+                var num1 = Math.floor(Math.random() * 800 ) + 700;
+                var num2 = Math.floor(Math.random() * 600) + 10;
+                this.enemySkull = new EnemieSkull(this.game,num1,num2);
+                this.enemiesGroup.add(this.enemySkull);
+            }
+
+            //}
         }
 
         fadeOut() {

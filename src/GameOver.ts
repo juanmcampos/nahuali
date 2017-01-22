@@ -6,10 +6,13 @@ module Nahuali {
         logo: Phaser.Sprite;
         emitter: Phaser.Particles.Arcade.Emitter;
         anim: any;
+
+        spacePress: Phaser.Key;
+        
         create() {
             
 
-            this.background = this.add.sprite(250, 140, 'gameoverImg');
+            this.background = this.add.sprite(110, 140, 'gameoverImg');
             this.background.alpha = 0;
 
             this.logo = this.add.sprite(this.world.centerX, this.world.centerY, 'logo');
@@ -20,8 +23,11 @@ module Nahuali {
             this.add.tween(this.background).to({ alpha: 1}, 2000, Phaser.Easing.Bounce.InOut, true);
             this.add.tween(this.logo).to({ y: 290 }, 2000, Phaser.Easing.Elastic.Out, true, 2000);
 
-            this.input.onDown.addOnce(this.fadeOut, this);
+            //this.input.onDown.addOnce(this.fadeOut, this);
+            this.spacePress = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
             
+            this.spacePress.onDown.addOnce(this.fadeOut, this);
+
              this.emitter = this.game.add.emitter(this.game.world.centerX, 0, 400);
 
 	this.emitter.width = this.game.world.width;
@@ -56,7 +62,10 @@ module Nahuali {
 
         startGame() {
 
-             this.game.state.start('MainMenu', true, false);
+             this.game.state.start('Level1', true,false);
+
+             //this.game.state.clearCurrentState();
+             
 
         }
 

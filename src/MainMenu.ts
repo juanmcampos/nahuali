@@ -94,6 +94,8 @@ module Nahuali {
     this.add.tween(this.textoInit).to({ alpha: 1}, 2000, Phaser.Easing.Linear.None, true);
     this.add.tween(this.textReflect).to({ alpha: 1}, 2000, Phaser.Easing.Linear.None, true);
 
+    
+
         }
         
         update(){
@@ -130,7 +132,7 @@ module Nahuali {
         }
 
         startGame() {
-
+            
              this.game.state.start('Level1', true, false);
         }
 

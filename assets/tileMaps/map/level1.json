@@ -18,7 +18,7 @@
  "tileheight":16,
  "tilesets":[
         {
-         "columns":12,
+         "columns":120,
          "firstgid":1,
          "image":"tiles.png",
          "imageheight":16,
