@@ -9,7 +9,7 @@ module Nahuali {
         create() {
             
 
-            this.background = this.add.sprite(150, 150, 'gameoverImg');
+            this.background = this.add.sprite(250, 140, 'gameoverImg');
             this.background.alpha = 0;
 
             this.logo = this.add.sprite(this.world.centerX, this.world.centerY, 'logo');
@@ -56,7 +56,7 @@ module Nahuali {
 
         startGame() {
 
-             this.game.state.start('Level1', true, false);
+             this.game.state.start('MainMenu', true, false);
 
         }
 

@@ -7,7 +7,8 @@ module Nahuali {
         player: Nahuali.Player;
         enemySkull: Nahuali.EnemieSkull;
         map: Phaser.Tilemap;
-        layer1: any;
+        layer1: Phaser.TilemapLayer;
+        enemiesGroup: Phaser.Group;
 
         create() {
             
@@ -25,7 +26,15 @@ module Nahuali {
             this.layer1.resizeWorld();
             
             this.player = new Player(this.game, 130, 284);
-            this.enemySkull = new EnemieSkull(this.game,250,284);
+            
+            this.enemiesGroup = this.game.add.group();
+            
+            for (var x = 0; x < 10; x++){
+                var num1 = Math.floor(Math.random() * 500) + 5;
+                var num2 = Math.floor(Math.random() * 100) + 10;
+                this.enemySkull = new EnemieSkull(this.game,num1,num2);
+                this.enemiesGroup.add(this.enemySkull);
+            }
 
            /* this.logo = this.add.sprite(this.world.centerX, -300, 'logo');
             this.logo.anchor.setTo(0.5, 0.5);
@@ -37,6 +46,10 @@ module Nahuali {
             
             this.startGame();
 
+        }
+        
+        update(){
+             this.layer1.position.y += 2;
         }
 
         fadeOut() {
@@ -51,7 +64,7 @@ module Nahuali {
         startGame() {
            
 
-            // this.game.state.start('Level1', true, false);
+           // this.game.state.start('Level1', true, false);
 
         }
 

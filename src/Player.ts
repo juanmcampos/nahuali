@@ -2,7 +2,7 @@ module Nahuali {
     
     export class Player extends Phaser.Sprite {
         
-        directionVelocity: number = 220;
+        directionVelocity: number = 350;
         flipFlop: boolean = false;
         changeDirection: Phaser.Key;
         limit: number;
@@ -74,9 +74,9 @@ module Nahuali {
                 
             });
             
-            this.events.onKilled.add(function() {
-                 this.game.state.start('gameover', true, false);
-            }, this);
+            this.events.onKilled.add(() => {
+                 this.game.state.start('GameOver', true, false);
+            });
        
         }
         

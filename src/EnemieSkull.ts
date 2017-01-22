@@ -18,7 +18,7 @@ module Nahuali {
             this.name = 'alien' + x.toString() + y.toString();
             this.checkWorldBounds = true;
             this.events.onOutOfBounds.add(this.alienOut, this);
-            
+            //this.body.allowGravity = false;
             /*this.body.collideWorldBounds = true;
             this.anchor.setTo(0.5,0.5);*/
             
@@ -27,7 +27,7 @@ module Nahuali {
         }
         
         update() { 
-            this.body.velocity.y = 50 + Math.random() * 200;
+            this.body.velocity.x = -200;
         }
         
         alienOut(alien) {

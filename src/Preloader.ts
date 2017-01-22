@@ -24,7 +24,7 @@ module Nahuali {
             this.game.load.tilemap('map', 'assets/tileMaps/map/level1.json', null, Phaser.Tilemap.TILED_JSON);
             this.game.load.image('tiles', 'assets/tileMaps/tile/tiles.png');
             this.game.load.image('bullet', 'assets/bullet.png');
-            this.game.load.spritesheet('gameoverImg', 'assets/gameover.png', 550, 135, 18);
+            this.game.load.spritesheet('gameoverImg', 'assets/gameover.png', 570, 135);
         }
 
         create() {
