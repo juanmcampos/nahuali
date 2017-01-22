@@ -4,19 +4,46 @@ module Nahuali {
 
         background: Phaser.Sprite;
         logo: Phaser.Sprite;
-
+        emitter: Phaser.Particles.Arcade.Emitter;
+        spacePress: Phaser.Key;
         create() {
+            
 
             this.background = this.add.sprite(0, 0, 'titlepage');
             this.background.alpha = 0;
 
             this.logo = this.add.sprite(this.world.centerX, -300, 'logo');
             this.logo.anchor.setTo(0.5, 0.5);
+            
+            
 
             this.add.tween(this.background).to({ alpha: 1}, 2000, Phaser.Easing.Bounce.InOut, true);
             this.add.tween(this.logo).to({ y: 290 }, 2000, Phaser.Easing.Elastic.Out, true, 2000);
 
             this.input.onDown.addOnce(this.fadeOut, this);
+            
+            this.spacePress = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+            
+            this.spacePress.onDown.addOnce(this.fadeOut, this);
+            
+            
+            this.emitter = this.game.add.emitter(this.game.world.centerX, 0, 400);
+
+	        this.emitter.width = this.game.world.width;
+	        // emitter.angle = 30; // uncomment to set an angle for the rain.
+
+	        this.emitter.makeParticles('rain');
+
+	        this.emitter.minParticleScale = 0.1;
+	        this.emitter.maxParticleScale = 0.5;
+
+        	this.emitter.setYSpeed(300, 500);
+        	this.emitter.setXSpeed(-5, 5);
+
+        	this.emitter.minRotation = 0;
+        	this.emitter.maxRotation = 0;
+
+        	this.emitter.start(false, 1600, 5, 0);
 
         }
 
@@ -32,7 +59,6 @@ module Nahuali {
         startGame() {
 
              this.game.state.start('Level1', true, false);
-
         }
 
     }

@@ -1,0 +1,1 @@
+src/app.ts src/Boot.ts src/EnemieSkull.ts src/Game.ts src/Level1.ts src/MainMenu.ts src/Player.ts src/Preloader.ts src/tileMap.ts tsDefinitions/p2.d.ts tsDefinitions/phaser.d.ts tsDefinitions/pixi.d.ts --sourcemap --removeComments --allowJs --target ES5 --out bin/js/game.js

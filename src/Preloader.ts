@@ -11,16 +11,20 @@ module Nahuali {
             this.load.setPreloadSprite(this.preloadBar);
 
             //  Load our actual games assets
-            this.load.image('titlepage', 'assets/titlepage.jpg');
+            this.load.image('titlepage', 'assets/sunset.png');
+            this.load.image('ggj', 'assets/globalgamejam.png');
             this.load.image('logo', 'assets/logo.png');
             this.load.audio('music', 'assets/title.mp3', true);
             this.load.spritesheet('simon', 'assets/simon.png', 58, 96, 5);
             this.load.image('level1', 'assets/level1.png');
-            this.load.image('player','assets/player.png');
+            this.load.image('player','assets/snake.png');
+            this.load.spritesheet('enemySkull', 'assets/simon.png', 58, 96, 5);
+            this.game.load.spritesheet('rain', 'assets/rain.png', 17, 17);
             
-            this.game.load.tilemap('map', 'assets/tileMaps/tile/tile_property.json');
-            this.game.load.image('tiles', 'assets/tileMaps/map/gridtiles.png');
+            this.game.load.tilemap('map', 'assets/tileMaps/map/level1.json', null, Phaser.Tilemap.TILED_JSON);
+            this.game.load.image('tiles', 'assets/tileMaps/tile/tiles.png');
             this.game.load.image('bullet', 'assets/bullet.png');
+            this.game.load.spritesheet('gameoverImg', 'assets/gameover.png', 550, 135, 18);
         }
 
         create() {
@@ -32,7 +36,7 @@ module Nahuali {
 
         startMainMenu() {
 
-            this.game.state.start('MainMenu', true, false);
+            this.game.state.start('GgjSplash', true, false);
 
         }
 
