@@ -1,6 +1,7 @@
 module Nahuali{
     export class Creditos extends Phaser.State {
         background: Phaser.Sprite;
+        spacePress: Phaser.Key;
         
         create(){
             this.background = this.add.sprite(0, 0, 'credits');
