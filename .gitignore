@@ -16,4 +16,5 @@ dist/
 out/
 bin/
 build/
-nahuali-*
+nahuali-*/
+Nahuali-*/
