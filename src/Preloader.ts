@@ -20,12 +20,21 @@ module Nahuali {
             this.load.image('player','assets/snake.png');
             this.load.image('tail','assets/tail.png');
             this.load.spritesheet('enemySkull', 'assets/simon.png', 58, 96, 5);
+            this.load.spritesheet('piedra1', 'assets/piedra1.png', 70, 70);
+            this.load.spritesheet('piedra2', 'assets/piedra2.png', 34, 33);
+            this.load.spritesheet('piedra3', 'assets/piedra3.png', 80, 55);
+            this.load.spritesheet('piedra4', 'assets/piedra4.png', 17, 25);
+            
+            this.load.spritesheet('skull', 'assets/skull.png', 64, 71);
             this.game.load.spritesheet('rain', 'assets/rain.png', 17, 17);
             
             this.game.load.tilemap('map', 'assets/tileMaps/map/level1.json', null, Phaser.Tilemap.TILED_JSON);
             this.game.load.image('tiles', 'assets/tileMaps/tile/tiles.png');
             this.game.load.image('bullet', 'assets/bullet.png');
             this.game.load.spritesheet('gameoverImg', 'assets/gameover.png', 570, 135);
+            
+            //this.game.load.audio('main', ['assets/audio/MysticForestHeatleyBros.mp3']);
+            this.game.load.audio('level1', ['assets/audio/BambooJungleHeatleyBros.mp3']);
         }
 
         create() {

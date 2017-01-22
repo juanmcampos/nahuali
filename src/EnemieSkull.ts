@@ -4,9 +4,9 @@ module Nahuali {
         
 
         
-        constructor(game: Phaser.Game, x: number, y: number) {
+        constructor(game: Phaser.Game, x: number, y: number, asset?:string ) {
 
-            super(game, x, y, 'enemySkull', 0);
+            super(game, x, y,(asset===undefined)?'enemySkull':asset, 0);
             
             game.physics.enable(this,Phaser.Physics.ARCADE);
 
@@ -17,7 +17,8 @@ module Nahuali {
            // var alien = aliens.create(200 + x * 48, y * 50, 'alien');
             this.name = 'alien' + x.toString() + y.toString();
             this.checkWorldBounds = true;
-            this.events.onOutOfBounds.add(this.alienOut, this);
+            this.outOfBoundsKill = true;
+            //this.events.onOutOfBounds.add(this.alienOut, this);
             //this.body.allowGravity = false;
             /*this.body.collideWorldBounds = true;
             this.anchor.setTo(0.5,0.5);*/

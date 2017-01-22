@@ -14,6 +14,7 @@ module Nahuali {
         timer:any = 0;
         timeOnce:boolean = false;
         
+        
         create() {
             
 
@@ -119,6 +120,8 @@ module Nahuali {
         }
         
         fadeOut() {
+            
+            
             
             this.textoInit.visible = false;
             this.textReflect.visible = false;
