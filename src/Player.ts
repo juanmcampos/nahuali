@@ -33,7 +33,7 @@ module Nahuali {
             
             game.add.existing(this);
             
-            this.scale.setTo(0.3, 0.3);
+            this.scale.setTo(0.25, 0.25);
             
             this.changeDirection = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
             
@@ -42,7 +42,7 @@ module Nahuali {
             
             
             //this.shipTrail.height = 10;
-            this.shipTrail.makeParticles('player');
+            this.shipTrail.makeParticles('tail');
             this.shipTrail.setXSpeed(-500);
             this.shipTrail.setYSpeed(0);
             this.shipTrail.gravity = 0;
@@ -57,8 +57,9 @@ module Nahuali {
             this.shipTrail.setScale(0.25, 0, 0.25, 0, 1500);
             
             this.shipTrail.start(false,3000,1);
+             //this.shipTrail.moveDown(this);
             
-            
+            this.moveUp(this.shipTrail);
 
             this.game.add.tween(this).to({angle:'135'}, 1, Phaser.Easing.Linear.None, true, 0);
          

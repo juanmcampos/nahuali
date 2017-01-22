@@ -18,6 +18,7 @@ module Nahuali {
             this.load.spritesheet('simon', 'assets/simon.png', 58, 96, 5);
             this.load.image('level1', 'assets/level1.png');
             this.load.image('player','assets/snake.png');
+            this.load.image('tail','assets/tail.png');
             this.load.spritesheet('enemySkull', 'assets/simon.png', 58, 96, 5);
             this.game.load.spritesheet('rain', 'assets/rain.png', 17, 17);
             

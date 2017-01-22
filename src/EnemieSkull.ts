@@ -27,7 +27,7 @@ module Nahuali {
         }
         
         update() { 
-            this.body.velocity.x = -250;
+            this.body.velocity.x = -240;
         }
         
         alienOut(alien) {
@@ -35,7 +35,7 @@ module Nahuali {
             
             alien.reset(alien.x, 0);
         
-            alien.body.velocity.x = 50 + Math.random() * 200;
+            alien.body.velocity.x = -240;//50 + Math.random() * 200;
         
         }
         

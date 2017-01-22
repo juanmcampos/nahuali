@@ -46,7 +46,7 @@ module Nahuali {
         }
         
         update(){
-             this.layer1.position.x -=8;
+             this.layer1.position.x -=4;
              //for (var x = 0; x < 10; x++){
 
             this.timer += this.game.time.elapsed; //this is in ms, not seconds. 
@@ -58,6 +58,8 @@ module Nahuali {
                 this.enemySkull = new EnemieSkull(this.game,num1,num2);
                 this.enemiesGroup.add(this.enemySkull);
             }
+            
+            this.game.physics.arcade.overlap(this.player, this.enemiesGroup, this.touchEnemy, null, this);
 
             //}
         }
@@ -76,6 +78,13 @@ module Nahuali {
 
            // this.game.state.start('Level1', true, false);
 
+        }
+        
+        touchEnemy (player, enemy) {
+    
+            console.log("oooookkk");
+            player.kill();
+        
         }
 
     }
