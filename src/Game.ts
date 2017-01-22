@@ -14,7 +14,7 @@ module Nahuali {
             this.state.add('MainMenu', MainMenu, false);
             this.state.add('Level1', Level1, false);
             this.state.add('GameOver', GameOver, false);
-            
+            this.state.add('Creditos', Creditos, false);
             this.state.add('GgjSplash', GgjSplash, false);
             
             

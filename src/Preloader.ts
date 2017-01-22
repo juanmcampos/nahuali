@@ -32,7 +32,7 @@ module Nahuali {
             this.game.load.image('tiles', 'assets/tileMaps/tile/tiles.png');
             this.game.load.image('bullet', 'assets/bullet.png');
             this.game.load.spritesheet('gameoverImg', 'assets/gameover.png', 570, 135);
-            
+            this.game.load.image('credits', 'assets/creditos.png');
             //this.game.load.audio('main', ['assets/audio/MysticForestHeatleyBros.mp3']);
             this.game.load.audio('level1', ['assets/audio/BambooJungleHeatleyBros.mp3']);
         }

@@ -62,7 +62,7 @@ module Nahuali {
 
         startGame() {
 
-             this.game.state.start('Level1', true,false);
+             this.game.state.start('Creditos', true,false);
 
              //this.game.state.clearCurrentState();
              
