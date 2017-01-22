@@ -12,8 +12,8 @@
     "width": 800,
     "height": 600,
     "position": "mouse",
-    "min_width": 805,
-    "min_height": 605,
+    "min_width": 800,
+    "min_height": 600,
     "max_width": 805,
     "max_height": 605,
     "position": "center"

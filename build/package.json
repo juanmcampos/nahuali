@@ -1,0 +1,24 @@
+{
+  "main": "index.html",
+  "name": "nw-nahuali",
+  "description": "Nahuali",
+  "version": "0.0.1",
+  "keywords": [ "demo", "node-webkit" ],
+  "window": {
+    "title": "Nahuali",
+    "icon": "link.png",
+    "toolbar": false,
+    "frame": false,
+    "width": 800,
+    "height": 600,
+    "position": "mouse",
+    "min_width": 800,
+    "min_height": 600,
+    "max_width": 805,
+    "max_height": 605,
+    "position": "center"
+  },
+  "webkit": {
+    "plugin": true
+  }
+}
